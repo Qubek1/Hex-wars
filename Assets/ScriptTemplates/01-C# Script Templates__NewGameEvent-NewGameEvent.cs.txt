@@ -1,0 +1,30 @@
+namespace GameLogic
+{
+    public class #SCRIPTNAME#Data : GameEventData
+    {
+        public #SCRIPTNAME#Data()
+        {
+            eventType = GameEventType.#SCRIPTNAME#;
+        }
+    }
+
+    public class #SCRIPTNAME#Execution : GameEventExecution
+    {
+        private GameData gameData;
+
+        public #SCRIPTNAME#Execution(GameData gameData)
+        {
+            this.gameData = gameData;
+        }
+
+        public override void Execute(GameEventData gameEventData)
+        {
+            #SCRIPTNAME#Data data = (#SCRIPTNAME#Data)gameEventData;
+        }
+
+        public override void Undo(GameEventData gameEventData)
+        {
+            #SCRIPTNAME#Data data = (#SCRIPTNAME#Data)gameEventData;
+        }
+    }
+}
