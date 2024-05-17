@@ -6,15 +6,15 @@ namespace GameLogic
 {
     public class GameEventsSequence
     {
-        private Stack<GameEventData> gameEventsStack;
-        private Stack<GameEventData> gameEventsTimeline;
+        private Stack<GameEvent> gameEventsStack;
+        private Stack<GameEvent> gameEventsTimeline;
 
         public GameEventsSequence(int stackInitialSize = 64)
         {
-            gameEventsStack = new Stack<GameEventData>(stackInitialSize);
+            gameEventsStack = new Stack<GameEvent>(stackInitialSize);
         }
 
-        public GameEventData GetCurrentGameEvent()
+        public GameEvent GetCurrentGameEvent()
         {
             return gameEventsStack.Peek();
         }
@@ -24,7 +24,7 @@ namespace GameLogic
             gameEventsTimeline.Push(gameEventsStack.Pop());
         }
 
-        public void AddGameEvent(GameEventData gameEvent)
+        public void AddGameEvent(GameEvent gameEvent)
         {
             gameEventsStack.Push(gameEvent);
         }

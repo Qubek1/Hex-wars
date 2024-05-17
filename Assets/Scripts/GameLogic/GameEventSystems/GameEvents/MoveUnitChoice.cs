@@ -1,6 +1,6 @@
 namespace GameLogic
 {
-    public class MoveUnitChoiceData : GameEventData
+    public class MoveUnitChoiceData : GameEvent
     {
         public MoveUnitChoiceData()
         {
@@ -17,12 +17,12 @@ namespace GameLogic
             this.gameData = gameData;
         }
 
-        public override void Undo(GameEventData gameEventData)
+        public override void Undo(GameEvent gameEventData)
         {
             MoveUnitChoiceData data = (MoveUnitChoiceData)gameEventData;
         }
 
-        public override bool ValidateChosenEvent(GameEventData gameEventData)
+        public override bool ValidateChosenEvent(GameEvent gameEventData)
         {
             MoveUnitChoiceData data = (MoveUnitChoiceData)gameEventData;
             if (data.eventType != GameEventType.MoveUnit)

@@ -7,8 +7,8 @@ namespace GameLogic
 {
     public abstract class ChoiceGameEventExecution : GameEventExecution
     {
-        public abstract bool ValidateChosenEvent(GameEventData gameEventData);
+        public abstract bool ValidateChosenEvent(GameEvent gameEventData);
 
-        public override void Execute(GameEventData gameEventData) { }
+        public override void Execute(GameEvent gameEventData) { }
     }
 }

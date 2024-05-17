@@ -7,7 +7,7 @@ public class GameModelSimulator : MonoBehaviour
 {
     public GameModel gameModel;
     public GameEventType currentEvent;
-    public GameEventData eventData;
+    public GameEvent eventData;
     public BoardParameters boardParameters;
 
     // Start is called before the first frame update

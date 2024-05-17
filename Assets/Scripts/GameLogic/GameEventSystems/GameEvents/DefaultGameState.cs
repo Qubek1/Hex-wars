@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace GameLogic
 {
-    public class DefaultGameStateData : GameEventData
+    public class DefaultGameStateData : GameEvent
     {
         public DefaultGameStateData()
         {
@@ -19,7 +19,7 @@ namespace GameLogic
             this.gameData = gameData;
         }
 
-        public override void Execute(GameEventData gameEventData)
+        public override void Execute(GameEvent gameEventData)
         {
             List<GameEventType> possibleEvents = new List<GameEventType>
             {
@@ -29,7 +29,7 @@ namespace GameLogic
             gameData.eventsSequence.AddGameEvent(newPossibleEventsTypes);
         }
 
-        public override void Undo(GameEventData gameEventData)
+        public override void Undo(GameEvent gameEventData)
         {
             DefaultGameStateData data = (DefaultGameStateData)gameEventData;
         }

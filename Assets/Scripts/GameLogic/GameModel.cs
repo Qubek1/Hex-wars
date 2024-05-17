@@ -31,14 +31,14 @@ namespace GameLogic
 
         public void Update()
         {
-            GameEventData currentEventData = GetCurrentEvent();
+            GameEvent currentEventData = GetCurrentEvent();
             if (!currentEventData.playerChoiceEvent)
             {
                 ExecuteEventData(currentEventData);
             }
             else
             {
-                GameEventData newPlayerMove = new DamageUnitData(new HexVector(0, 0), 1);
+                GameEvent newPlayerMove = new DamageUnitEvent(new HexVector(0, 0), 1);
                 if (((ChoiceGameEventExecution)GetEventExecutionFromType(currentEventData.eventType)).ValidateChosenEvent(newPlayerMove))
                 {
                     ExecuteEventData(currentEventData);

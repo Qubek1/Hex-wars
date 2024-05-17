@@ -41,7 +41,7 @@ namespace GameLogic
 
         public void Die()
         {
-            gameEventsQueue.AddGameEvent(new UnitDeathData(position));
+            gameEventsQueue.AddGameEvent(new UnitDeathEvent(position));
         }
 
         public void Merge(Unit anotherUnit)

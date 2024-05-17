@@ -4,9 +4,10 @@ using UnityEngine;
 
 namespace GameLogic
 {
-    public abstract class GameEventData
+    public abstract class GameEvent
     {
         public bool playerChoiceEvent = false;
-        public GameEventType eventType;
+        public abstract void Execute(GameData gameData);
+        public abstract void Undo(GameData gameData);
     }
 }

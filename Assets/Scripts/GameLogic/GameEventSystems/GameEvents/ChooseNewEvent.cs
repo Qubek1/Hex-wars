@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace GameLogic
 {
-    public class ChooseNewEventData : GameEventData
+    public class ChooseNewEventData : GameEvent
     {
         public List<GameEventType> possibleNewEvents;
 
@@ -22,11 +22,11 @@ namespace GameLogic
             this.gameData = gameData;
         }
 
-        public override void Undo(GameEventData gameEventData)
+        public override void Undo(GameEvent gameEventData)
         {
         }
 
-        public override bool ValidateChosenEvent(GameEventData gameEventData)
+        public override bool ValidateChosenEvent(GameEvent gameEventData)
         {
             ChooseNewEventData data = (ChooseNewEventData)gameEventData;
             return data.possibleNewEvents.Contains(data.eventType);
